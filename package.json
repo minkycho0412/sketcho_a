@@ -1,0 +1,21 @@
+{
+  "name": "sketcho_final",
+  "version": "1.0.0",
+  "description": "final prototype of sketcho_graduation project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "online",
+    "meeting",
+    "application"
+  ],
+  "author": "yeun kim",
+  "license": "ISC"
+}
