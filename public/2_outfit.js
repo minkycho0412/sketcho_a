@@ -13,6 +13,7 @@ let nameField;
 let canvas;
 let bg;
 let mask;
+let img;
 
 
 function windowResized(){
@@ -25,6 +26,7 @@ function windowResized(){
     canvas.position(0,0);
     canvas.style('z-index', '-1');
     bg = loadImage('images/outfit.jpg');
+    img = loadImage('images/item.png');
     noCursor();
     let constraints = {audio: false, video: true};
     myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
@@ -56,6 +58,7 @@ function windowResized(){
   
   function draw() {
     background(bg);
+    image(img,0,0,windowWidth, windowHeight);
     //stroke(255);
     // mask = createGraphics(vidWidth, vidHeight);
     // mask.circle(mask.width/2, mask.height/2, 80);
