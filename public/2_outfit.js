@@ -78,7 +78,7 @@ function windowResized(){
       textSize(20);
      
       mask = createGraphics(vidWidth, vidHeight);
-      mask.circle(mask.width/2, mask.height/2, 130);
+      mask.circle(mask.width/2, mask.height/2, 120);
       thisConnectJSON.video.mask(mask);
   
       }

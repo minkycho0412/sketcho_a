@@ -89,7 +89,7 @@ function UnMute(){
     // mask = createGraphics(vidWidth, vidHeight);
     // mask.circle(mask.width/2, mask.height/2, 80);
     // myVideo.mask(mask);
-    noCursor;
+    noCursor();
     noStroke();
     fill(r, g, b);
     triangle(mouseX,mouseY,mouseX + 20,mouseY + 5, mouseX + 6, mouseY + 18);
@@ -107,7 +107,7 @@ function UnMute(){
       textSize(20);
      
       mask = createGraphics(vidWidth, vidHeight);
-      mask.circle(mask.width/2, mask.height/2, 130);
+      mask.circle(mask.width/2, mask.height/2, 120);
       thisConnectJSON.video.mask(mask);
   
       }
