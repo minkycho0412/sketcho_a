@@ -16,10 +16,10 @@ let mask;
 let img;
 
 
-function windowResized(){
-    console.log('resized');
-    resizeCanvas(windowWidth, windowHeight);
-  }
+// function windowResized(){
+//     console.log('resized');
+//     resizeCanvas(windowWidth, windowHeight);
+//   }
   
   function setup() {
     canvas =   createCanvas(windowWidth, windowHeight);

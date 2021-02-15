@@ -51,7 +51,7 @@ ul li:hover a{
   padding-left: 50px;
 }
 
-.sidebar ul a i{
+.sidebar ul a svg{
   margin-right: 16px;
 }
 
@@ -150,3 +150,5 @@ left:30%;
 top:20%;
 margin:-75px 0 0 -135px;
 }
+
+li >
