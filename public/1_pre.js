@@ -20,10 +20,10 @@ let myAudio;
 
 // let constraintsValue;
 
-// function windowResized(){
-//     console.log('resized');
-//     resizeCanvas(windowWidth, windowHeight);
-//   }
+function windowResized(){
+    console.log('resized');
+    resizeCanvas(windowWidth, windowHeight);
+  }
   
   function setup() {
     canvas =   createCanvas(windowWidth, windowHeight);
@@ -46,7 +46,7 @@ let myAudio;
     }
     nameField = createInput("Enter your name");
     nameField.changed(enteredName);
-    nameField.position(10,620);
+    nameField.position(10,700);
 
     r = random(255);
     g = random(255);

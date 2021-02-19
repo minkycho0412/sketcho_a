@@ -38,7 +38,7 @@ function windowResized(){
     }
     nameField = createInput("Enter your name");
     nameField.changed(enteredName);
-    nameField.position(10,620);
+    nameField.position(10,700);
 
     r = random(255);
     g = random(255);

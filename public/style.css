@@ -151,4 +151,20 @@ top:20%;
 margin:-75px 0 0 -135px;
 }
 
-li >
+#miro1{
+widows: 800px;
+height: 230px;
+position:absolute;
+left:30%;
+top:25%;
+margin:-75px 0 0 -135px;
+}
+
+#miro2{
+  widows: 300px;
+  height: 230px;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-75px 0 0 -135px;
+  }

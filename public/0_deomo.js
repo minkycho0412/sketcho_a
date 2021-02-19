@@ -6,10 +6,10 @@ let vidHeight = 120;
 let bg;
 let r, g, b;
 
-// function windowResized(){
-//   console.log('resized');
-//   resizeCanvas(windowWidth, windowHeight);
-// }
+function windowResized(){
+  console.log('resized');
+  resizeCanvas(windowWidth, windowHeight);
+}
 
 function setup() {
   

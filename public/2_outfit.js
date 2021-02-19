@@ -40,7 +40,7 @@ let img;
     }
     nameField = createInput("Enter your name");
     nameField.changed(enteredName);
-    nameField.position(10,620);
+    nameField.position(10,700);
 
     r = random(255);
     g = random(255);
@@ -58,7 +58,7 @@ let img;
   
   function draw() {
     background(bg);
-    image(img,0,0,windowWidth, windowHeight);
+   
     //stroke(255);
     // mask = createGraphics(vidWidth, vidHeight);
     // mask.circle(mask.width/2, mask.height/2, 80);
@@ -85,6 +85,7 @@ let img;
       thisConnectJSON.video.mask(mask);
   
       }
+      image(img,0,0,windowWidth, windowHeight);
   }
   
   // We got a new stream!
