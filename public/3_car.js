@@ -50,7 +50,7 @@ let img;
   
   
   function gotMineConnectOthers(myStream) {
-    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "outfitRoom");
+    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "carmuseumRoom");
     p5live.on('stream', gotOtherStream);
     p5live.on('disconnect', lostOtherStream);
     p5live.on('data', gotData);
