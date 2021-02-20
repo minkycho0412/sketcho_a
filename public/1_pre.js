@@ -87,14 +87,12 @@ function Mute(){
     myVideo.elt.muted = true;
     mic = 0;
     console.log('you are Muted')
-    Button.textContent = "Unmute";
   }
 
   else if (mic == 0){
     myVideo.elt.muted = false;
     mic = 1;
     console.log('you are unMuted')
-    Button.textContent = "Mute";
 
   }
 }
