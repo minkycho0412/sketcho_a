@@ -32,10 +32,18 @@ function windowResized(){
     bg = loadImage('images/Final_cafe.jpg');
     noCursor();
 
-    let constraints = {audio: false, video: true};
+    let constraints = {audio: true, video: true};
     console.log(mic);
-
+    console.log(constraints);
+    
     myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
+    //   let audioTracks = stream.getAudioTracks();
+    //    // Use the first audio track
+    //   if (audioTracks.length > 0) {
+    //   // Add it to the canvas stream
+    //   myStream.addTrack(audioTracks[0]);
+    // }
+
     myVideo.size(vidWidth, vidHeight);
     myVideo.hide();
     allConnections['Me'] = {
@@ -52,10 +60,10 @@ function windowResized(){
     g = random(255);
     b = random(255);
 
-  button = createButton('UnMute');
+  button = createButton('Mute');
   button.position(800,10);
   button.size(50,40);
-  button.mousePressed(UnMute);
+  button.mousePressed(Mute);
   myVideo.elt.muted = true; 
   
   }
@@ -68,27 +76,27 @@ function windowResized(){
   }
 
   
-function UnMute(){
+function Mute(){
   if (mic == true){
-    myVideo.muted = false;    
+    myVideo.elt.muted = true;    
+    constraints = {audio: false, video: true};
+    myVideo.hide();
     mic = 0;
-    console.log('UnMuted')
+    console.log(constraints)
   }
 
   else if (mic == false){
-    myVideo.muted = true;    
+    constraints = {audio: true, video: true};
+    myVideo.hide();
     mic = 1;
-    console.log('Muted')
+    console.log(constraints)
   }
 }
   
 
   function draw() {
     background(bg);
-    //stroke(255);
-    // mask = createGraphics(vidWidth, vidHeight);
-    // mask.circle(mask.width/2, mask.height/2, 80);
-    // myVideo.mask(mask);
+   
     noCursor();
     noStroke();
     fill(r, g, b);
