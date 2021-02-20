@@ -15,8 +15,9 @@ let bg;
 let mask;
 let r, g, b;
 let button;
+
 let mic = true;
-let myAudio;
+// let myAudio;
 
 // let constraintsValue;
 
@@ -35,15 +36,10 @@ function windowResized(){
     let constraints = {audio: true, video: true};
     console.log(mic);
     console.log(constraints);
-    
-    myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
-    //   let audioTracks = stream.getAudioTracks();
-    //    // Use the first audio track
-    //   if (audioTracks.length > 0) {
-    //   // Add it to the canvas stream
-    //   myStream.addTrack(audioTracks[0]);
-    // }
 
+   
+    myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
+   
     myVideo.size(vidWidth, vidHeight);
     myVideo.hide();
     allConnections['Me'] = {
@@ -61,10 +57,10 @@ function windowResized(){
     b = random(255);
 
   button = createButton('Mute');
-  button.position(800,10);
-  button.size(50,40);
+  button.position(850,10);
+  button.size(80,40);
   button.mousePressed(Mute);
-  myVideo.elt.muted = true; 
+  
   
   }
   
@@ -74,22 +70,32 @@ function windowResized(){
     p5live.on('disconnect', lostOtherStream);
     p5live.on('data', gotData);
   }
-
+  
+  // muteButton.addEventListener("click", function () {
+  //   muteFlag = !muteFlag;
+  //   if(muteFlag){
+  //     myVideo.elt.muted = true;
+  //     muteButton.textContent = "Unmute";
+  //   } else{
+  //     myVideo.elt.muted = false;
+  //     muteButton.textContent = "Mute";
+  //   }
+  // });
   
 function Mute(){
-  if (mic == true){
-    myVideo.elt.muted = true;    
-    constraints = {audio: false, video: true};
-    myVideo.hide();
+  if (mic == 1){
+    myVideo.elt.muted = true;
     mic = 0;
-    console.log(constraints)
+    console.log('you are Muted')
+    Button.textContent = "Unmute";
   }
 
-  else if (mic == false){
-    constraints = {audio: true, video: true};
-    myVideo.hide();
+  else if (mic == 0){
+    myVideo.elt.muted = false;
     mic = 1;
-    console.log(constraints)
+    console.log('you are unMuted')
+    Button.textContent = "Mute";
+
   }
 }
   

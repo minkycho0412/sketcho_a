@@ -179,3 +179,12 @@ margin:-75px 0 0 -135px;
     font-family: Open Sans;
     font-size: 18px;
   }
+
+  button{
+    background-color: #050505; /* Green background */
+    border: 1px solid rgb(0, 0, 0); /* Green border */
+    color: rgb(255, 255, 255); /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: center; /* Float the buttons side by side */
+  }
