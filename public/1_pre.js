@@ -2,7 +2,7 @@
 // Open this sketch up 9 times to send video back and forth
 // let socket = io.connect("http://localhost:4000");
 
-//let socket = io.connect("http://localhost:5500");
+// let socket = io.connect("http://localhost:5500");
 
 let allConnections = [];
 let vidWidth = 160;
@@ -13,13 +13,8 @@ let nameField;
 let canvas;
 let bg;
 let mask;
-let r, g, b;
-let button;
+let img;
 
-let mic = true;
-// let myAudio;
-
-// let constraintsValue;
 
 function windowResized(){
     console.log('resized');
@@ -31,15 +26,10 @@ function windowResized(){
     canvas.position(0,0);
     canvas.style('z-index', '-1');
     bg = loadImage('images/Final_cafe.jpg');
+
     noCursor();
-
-    let constraints = {audio: true, video: true};
-    console.log(mic);
-    console.log(constraints);
-
-   
+    let constraints = {audio: false, video: true};
     myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
-   
     myVideo.size(vidWidth, vidHeight);
     myVideo.hide();
     allConnections['Me'] = {
@@ -55,62 +45,34 @@ function windowResized(){
     r = random(255);
     g = random(255);
     b = random(255);
-
-  button = createButton('Mute');
-  button.position(850,10);
-  button.size(80,40);
-  button.mousePressed(Mute);
-  
   
   }
   
+  
   function gotMineConnectOthers(myStream) {
-    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "PreparationRoom");
+    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "preparationRoom");
     p5live.on('stream', gotOtherStream);
     p5live.on('disconnect', lostOtherStream);
     p5live.on('data', gotData);
   }
   
-  // muteButton.addEventListener("click", function () {
-  //   muteFlag = !muteFlag;
-  //   if(muteFlag){
-  //     myVideo.elt.muted = true;
-  //     muteButton.textContent = "Unmute";
-  //   } else{
-  //     myVideo.elt.muted = false;
-  //     muteButton.textContent = "Mute";
-  //   }
-  // });
-  
-function Mute(){
-  if (mic == 1){
-    myVideo.elt.muted = true;
-    mic = 0;
-    console.log('you are Muted')
-  }
-
-  else if (mic == 0){
-    myVideo.elt.muted = false;
-    mic = 1;
-    console.log('you are unMuted')
-
-  }
-}
-  
-
   function draw() {
     background(bg);
    
-    noCursor();
+    //stroke(255);
+    // mask = createGraphics(vidWidth, vidHeight);
+    // mask.circle(mask.width/2, mask.height/2, 80);
+    // myVideo.mask(mask);
+    noCursor;
+    noCursor;
     noStroke();
     fill(r, g, b);
     triangle(mouseX,mouseY,mouseX + 20,mouseY + 5, mouseX + 6, mouseY + 18);
-   
+
     for (var id in allConnections) {
       let thisConnectJSON = allConnections[id];
       let x = thisConnectJSON.x;
       let y = thisConnectJSON.y;
-    
       image(thisConnectJSON.video, x, y, vidWidth, vidHeight);
       
       noStroke();
@@ -123,6 +85,7 @@ function Mute(){
       thisConnectJSON.video.mask(mask);
   
       }
+  
   }
   
   // We got a new stream!
@@ -188,4 +151,3 @@ function Mute(){
       allConnections[id].y = d.y;
     }
   }
-  
