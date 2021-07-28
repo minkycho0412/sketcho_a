@@ -1,7 +1,7 @@
 {
-  "name": "sketcho_final",
+  "name": "final_sketcho_host",
   "version": "1.0.0",
-  "description": "final prototype of sketcho_graduation project",
+  "description": "sketcho project",
   "main": "index.js",
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -10,15 +10,15 @@
   },
   "devDependencies": {},
   "scripts": {
-    "worker": "node index.js",
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "online",
-    "meeting",
-    "application"
-  ],
-  "author": "yeun kim",
-  "license": "MIT"
+  "author": "minkycho",
+  "license": "MIT",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+
 }
