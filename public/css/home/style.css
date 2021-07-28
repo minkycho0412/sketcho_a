@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.sidebar{
+ position: fixed;
+ left:-250px;
+ widows: 300px;
+ height: 100%;
+ background: #000000;
+
+}
+
+.sidebar header{
+font-size:20px;
+color:rgb(0, 0, 0);
+text-align: center;
+line-height: 70px;
+background: #c3e9ff;
+user-select: none;
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width:100%;
+  line-height: 65px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 0px solid #c3e9ff;
+  transition: .4s;
+}
+
+ul li:hover a{
+  padding-left: 50px;
+}
+
+.sidebar ul a svg{
+  margin-right: 16px;
+}
+
+#check{
+display: none;
+}
+
+label #btn, label #cancel{
+  position: absolute;
+  cursor:pointer;
+  background: #000000;
+  border-radius: 3px;
+}
+
+label #btn{
+  left: 40px;
+  top: 25px; 
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+
+label #cancel{
+  z-index: 1111;
+  left: -200px;
+  top: 23px;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 4px 9px;
+  /* transition: all .5s; */
+}
+
+#check:checked ~.sidebar{
+  left: 0;
+}
+
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+  left: 170px;
+  
+}
+
+#video
+{
+position:absolute;
+top: 65px;
+left:300px;
+/* width:1280px;
+height:1200px; */
+}
+
+#bar
+{
+position:absolute;
+top: 30px;
+left:930px;
+/* width:1280px;
+height:1200px; */
+}
+
+h1{
+  text-align: center;
+  font-size: 50px;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative; 
+}
+
+.button a{
+  color: #ffffff;
+}
+
+.button1 {background-color: #000000;}
+
+#myframe {
+widows: 500px;
+height:300 px;
+position:absolute;
+left:30%;
+top:20%;
+margin:-75px 0 0 -135px;
+}
+
+#miro1{
+widows: 800px;
+height: 230px;
+position:absolute;
+left:30%;
+top:25%;
+margin:-75px 0 0 -135px;
+}
+
+#miro2{
+  widows: 300px;
+  height: 230px;
+  position:absolute;
+  left:50%;
+  top:40%;
+  margin:-75px 0 0 -135px;
+  }
+
+  input {
+    padding: 15px;
+    box-sizing: border-box;
+    background: rgb(158, 158, 158);
+    display: block;
+    width: 15%;
+    background: rgb(255, 253, 253);
+    font-family: Open Sans;
+    font-size: 18px;
+  }
+
+  /* button{
+    background-color: #050505; Green background */
+    /* border: 1px solid rgb(0, 0, 0); Green border */
+    /* color: rgb(255, 255, 255); White text */
+    /* padding: 10px 24px; Some padding */
+    /* cursor: pointer; Pointer/hand icon */
+    /* float: center; Float the buttons side by side */
+  /* } */ 
+
+  #google{
+    position:absolute;
+    left:80%;
+    top:40%;
+     margin:-75px 0 0 -135px;
+  }

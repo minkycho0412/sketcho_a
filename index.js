@@ -1,23 +1,46 @@
+//모듈
 const express = require("express");
+const http = require("http");
 const socket = require("socket.io");
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
+
+
+const server = http.createServer(app);
+const socketIO = require("socket.io");
+const io = socketIO(server);
+
+// 앱 세팅
+app.use(express.static(`${__dirname}/public`));
 
 //Starts the server
 
-let server = app.listen(process.env.PORT || 5500, function () {
-  console.log("Server is running");
-});
+const PORT = process.env.PORT || 5500;
 
-app.use(express.static("public"));
+// let server = app.listen(PORT, function () {
+//   console.log("Server is running");
+// });
+
+server.listen(PORT, function () {
+    console.log("Server is running");
+  });
+
 
 //Upgrades the server to accept websockets.
 
-let io = socket(server);
+// let io = socket(server);
 
 //Triggered when a client is connected.
 
-io.on("connection", function (socket) {
-  console.log("User Connected :" + socket.id);
+io.on("connection", (socket) => {
+  console.log("User Connected :" + socket.id );
+  
+  socket.on("myid", (data) => {
+    console.log(data);
+    io.emit("myid", data);
+  });
 
   //Triggered when a peer hits the join room button.
 
