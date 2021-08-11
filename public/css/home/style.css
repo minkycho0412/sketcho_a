@@ -16,7 +16,7 @@ body {
 
 .sidebar{
  position: fixed;
- left:-250px;
+ left:-300px;
  widows: 300px;
  height: 100%;
  background: #000000;
@@ -173,7 +173,7 @@ margin:-75px 0 0 -135px;
     padding: 15px;
     box-sizing: border-box;
     background: rgb(158, 158, 158);
-    display: block;
+    /* display: block; */
     width: 15%;
     background: rgb(255, 253, 253);
     font-family: Open Sans;

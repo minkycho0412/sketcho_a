@@ -56,6 +56,9 @@ function draw() {
   mask = createGraphics(vidWidth, vidHeight);
   mask.circle(mask.width/2, mask.height/2, 120);
   myVideo.mask(mask);
+  textSize(30);
+  text(nickname.value, mouseX+50, mouseY+150);
   image(myVideo, mouseX, mouseY, vidWidth, vidHeight);
 
 }
+
