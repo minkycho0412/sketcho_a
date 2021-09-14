@@ -1,16 +1,14 @@
 const socket = io();
 
-window.onload=function(){
-  const nickname = document.querySelector("#nickname");
-  const sendButton = document.querySelector("#button1");
+const nickname = document.querySelector("#nickname");
+const sendButton = document.querySelector("#button1");
 
-  sendButton.addEventListener("click", () => {
-    const param = {
-      name: nickname.value,
-    }
-    socket.emit("myid", param);
-  });
-}
+sendButton.addEventListener("click", () => {
+  const param = {
+    name: nickname.value,
+  }
+  socket.emit("myid", param);
+});
 
 socket.on("myid", (data) => {
   console.log(data);
