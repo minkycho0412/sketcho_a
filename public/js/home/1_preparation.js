@@ -163,12 +163,12 @@ function MuteClick(){
   if(!muted) {
     myVideo.elt.muted = true;
     // console.log(myVideo.elt.muted);
-    muteBtn.innerText = "mute";
+    muteBtn.innerText = "Unmute";
     muted = true;
   } else {
     myVideo.elt.muted = false;
     // console.log(myVideo.elt.muted);
-    muteBtn.innerText = "Unmute";
+    muteBtn.innerText = "mute";
     muted = false;
   } 
 
