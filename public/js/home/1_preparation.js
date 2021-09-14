@@ -10,6 +10,8 @@ const socket = io();
 let muteBtn = document.getElementById("mute");
 muteBtn.addEventListener("click", MuteClick);
 
+let muted = false;
+
 let allConnections = [];
 let vidWidth = 160;
 let vidHeight = 120;
@@ -20,8 +22,6 @@ let canvas;
 let bg;
 let mask;
 let img;
-
-let muted = false;
 
 function windowResized() {
   console.log('resized');
@@ -162,12 +162,12 @@ function gotData(data, id) {
 function MuteClick(){
   if(!muted) {
     myVideo.elt.muted = true;
-    // console.log(myVideo.elt.muted);
+    console.log(myVideo.elt.muted);
     muteBtn.innerText = "Unmute";
     muted = true;
   } else {
     myVideo.elt.muted = false;
-    // console.log(myVideo.elt.muted);
+    console.log(myVideo.elt.muted);
     muteBtn.innerText = "mute";
     muted = false;
   } 

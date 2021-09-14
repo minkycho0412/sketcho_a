@@ -7,6 +7,11 @@
 // let socket = io.connect("http://localhost:5500");
 const socket = io();
 
+let muteBtn = document.getElementById("mute");
+muteBtn.addEventListener("click", MuteClick);
+
+let muted = false;
+
 let allConnections = [];
 let vidWidth = 160;
 let vidHeight = 120;
@@ -31,7 +36,7 @@ let img;
     bg = loadImage('images/outfit.jpg');
     img = loadImage('images/item.png');
     noCursor();
-    let constraints = {audio: false, video: true};
+    let constraints = {audio: true, video: true};
     myVideo = createCapture(constraints,VIDEO, gotMineConnectOthers);
     myVideo.size(vidWidth, vidHeight);
     myVideo.hide();
@@ -153,4 +158,19 @@ let img;
       allConnections[id].x = d.x;
       allConnections[id].y = d.y;
     }
+  }
+
+  function MuteClick(){
+    if(!muted) {
+      myVideo.elt.muted = true;
+      console.log(myVideo.elt.muted);
+      muteBtn.innerText = "Unmute";
+      muted = true;
+    } else {
+      myVideo.elt.muted = false;
+      console.log(myVideo.elt.muted);
+      muteBtn.innerText = "mute";
+      muted = false;
+    } 
+  
   }
