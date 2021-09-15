@@ -162,13 +162,11 @@ function gotData(data, id) {
 function MuteClick(){
   if(!muted) {
     myVideo.elt.muted = true;
-    console.log(myVideo);
     console.log(myVideo.elt.muted);
     muteBtn.innerText = "Unmute";
     muted = true;
   } else {
     myVideo.elt.muted = false;
-    console.log(myVideo);
     console.log(myVideo.elt.muted);
     muteBtn.innerText = "mute";
     muted = false;
