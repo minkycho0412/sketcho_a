@@ -9,8 +9,12 @@ const socket = io();
 
 let muteBtn = document.getElementById("mute");
 muteBtn.addEventListener("click", MuteClick);
+let cameraBtn = document.getElementById("camera");
+cameraBtn.addEventListener("click", CameraClick);
 
 let muted = false;
+let cameraOff = false;
+let videoTrack;
 
 let allConnections = [];
 let vidWidth = 160;
@@ -56,12 +60,42 @@ let img;
   
   }
   
-  
   function gotMineConnectOthers(myStream) {
-    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "outfitRoom");
+    p5live = new p5LiveMedia(this, "CAPTURE", myStream, "preparationRoom");
     p5live.on('stream', gotOtherStream);
     p5live.on('disconnect', lostOtherStream);
     p5live.on('data', gotData);
+    videoTrack = myStream.getVideoTracks()[0];
+  }
+  
+  function MuteClick(){
+    if(!muted) {
+      myVideo.elt.muted = true;
+      console.log("Mute is " + myVideo.elt.muted);
+      muteBtn.innerText = "Unmute";
+      muted = true;
+    } else {
+      myVideo.elt.muted = false;
+      console.log("Mute is " + myVideo.elt.muted);
+      muteBtn.innerText = "mute";
+      muted = false;
+    } 
+  
+  }
+  
+  function CameraClick(){
+    if(!cameraOff) {
+      videoTrack.enabled = false;
+      console.log("Camera is " + videoTrack.enabled);
+      cameraBtn.innerText = "Turn Camera On";
+      cameraOff = true;
+      
+    } else {
+      videoTrack.enabled = true;
+      console.log("Camera is " + videoTrack.enabled);
+      cameraBtn.innerText = "Turn Camera Off";
+      cameraOff = false;
+    } 
   }
   
   function draw() {
@@ -158,19 +192,4 @@ let img;
       allConnections[id].x = d.x;
       allConnections[id].y = d.y;
     }
-  }
-
-  function MuteClick(){
-    if(!muted) {
-      myVideo.elt.muted = true;
-      console.log(myVideo.elt.muted);
-      muteBtn.innerText = "Unmute";
-      muted = true;
-    } else {
-      myVideo.elt.muted = false;
-      console.log(myVideo.elt.muted);
-      muteBtn.innerText = "mute";
-      muted = false;
-    } 
-  
   }

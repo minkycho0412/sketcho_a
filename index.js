@@ -1,7 +1,7 @@
 //모듈
 const express = require("express");
 const http = require("http");
-const socket = require("socket.io");
+// const socket = require("socket.io");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -11,7 +11,6 @@ const app = express();
 const server = http.createServer(app);
 const socketIO = require("socket.io");
 const io = socketIO(server);
-
 // 앱 세팅
 app.use(express.static(`${__dirname}/public`));
 
