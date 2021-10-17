@@ -66,37 +66,42 @@ let img;
     p5live.on('disconnect', lostOtherStream);
     p5live.on('data', gotData);
     videoTrack = myStream.getVideoTracks()[0];
+    audioTrack = myStream.getAudioTracks()[0];
   }
   
-  function MuteClick(){
-    if(!muted) {
-      myVideo.elt.muted = true;
-      console.log("Mute is " + myVideo.elt.muted);
-      muteBtn.innerText = "Unmute";
-      muted = true;
-    } else {
-      myVideo.elt.muted = false;
-      console.log("Mute is " + myVideo.elt.muted);
-      muteBtn.innerText = "mute";
-      muted = false;
-    } 
-  
-  }
-  
-  function CameraClick(){
-    if(!cameraOff) {
-      videoTrack.enabled = false;
-      console.log("Camera is " + videoTrack.enabled);
-      cameraBtn.innerText = "Turn Camera On";
-      cameraOff = true;
-      
-    } else {
-      videoTrack.enabled = true;
-      console.log("Camera is " + videoTrack.enabled);
-      cameraBtn.innerText = "Turn Camera Off";
-      cameraOff = false;
-    } 
-  }
+function MuteClick(){
+  if(!muted) {
+    audioTrack.enabled = false;
+    console.log("audio is " + audioTrack.enabled);
+    document.getElementById("mute").innerHTML= '<i class = "fas fa-microphone-slash"></i>';
+    // muteBtn.innerText = "Unmute";
+    muted = true;
+  } else {
+    audioTrack.enabled = true;
+    console.log("audio is " + audioTrack.enabled);
+    document.getElementById("mute").innerHTML= '<i class = "fas fa-microphone"></i>';
+    // muteBtn.innerText = "mute";
+    muted = false;
+  } 
+
+}
+
+function CameraClick(){
+  if(!cameraOff) {
+    videoTrack.enabled = false;
+    console.log("Camera is " + videoTrack.enabled);
+    document.getElementById("camera").innerHTML= '<i class="fas fa-video-slash"></i>';
+    //cameraBtn.innerText = "Turn Camera On";
+    cameraOff = true;
+    
+  } else {
+    videoTrack.enabled = true;
+    console.log("Camera is " + videoTrack.enabled);
+    document.getElementById("camera").innerHTML= '<i class="fas fa-video"></i>';
+    //cameraBtn.innerText = "Turn Camera Off";
+    cameraOff = false;
+  } 
+}
   
   function draw() {
     background(bg);
