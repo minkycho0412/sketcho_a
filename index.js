@@ -1,38 +1,24 @@
-//모듈
+//modules
 const express = require("express");
-const http = require("http");
-// const socket = require("socket.io");
+const app = express();
+const socket = require("socket.io");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const app = express();
-
-
-const server = http.createServer(app);
-const socketIO = require("socket.io");
-const io = socketIO(server);
-// 앱 세팅
-app.use(express.static(`${__dirname}/public`));
-
-//Starts the server
-
 const PORT = process.env.PORT || 5500;
 
-// let server = app.listen(PORT, function () {
-//   console.log("Server is running");
-// });
+//app setting
+app.use(express.static(`${__dirname}/public`));
 
-server.listen(PORT, function () {
-    console.log("Server is running");
-  });
-
+// Starts the server
+let server = app.listen(PORT, function () {
+  console.log("Server is running");
+});
 
 //Upgrades the server to accept websockets.
-
-// let io = socket(server);
+let io = socket(server);
 
 //Triggered when a client is connected.
-
 io.on("connection", (socket) => {
   console.log("User Connected :" + socket.id );
   
@@ -42,7 +28,6 @@ io.on("connection", (socket) => {
   });
 
   //Triggered when a peer hits the join room button.
-
   socket.on("join", function (roomName) {
     let rooms = io.sockets.adapter.rooms;
     let room = rooms.get(roomName);
@@ -68,20 +53,17 @@ io.on("connection", (socket) => {
   });
 
   //Triggered when server gets an icecandidate from a peer in the room.
-
   socket.on("candidate", function (candidate, roomName) {
     console.log(candidate);
     socket.broadcast.to(roomName).emit("candidate", candidate); //Sends Candidate to the other peer in the room.
   });
 
   //Triggered when server gets an offer from a peer in the room.
-
   socket.on("offer", function (offer, roomName) {
     socket.broadcast.to(roomName).emit("offer", offer); //Sends Offer to the other peer in the room.
   });
 
   //Triggered when server gets an answer from a peer in the room.
-
   socket.on("answer", function (answer, roomName) {
     socket.broadcast.to(roomName).emit("answer", answer); //Sends Answer to the other peer in the room.
   });
