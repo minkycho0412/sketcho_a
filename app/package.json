@@ -2,25 +2,20 @@
   "name": "final_sketcho_host",
   "version": "1.0.0",
   "description": "sketcho project",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "socket.io": "^4.2.0"
+    "socket.io": "^4.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
   },
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "minkycho",
-  "license": "MIT",
-  "homepage": "",
-  "repository": {
-    "type": "git",
-    "url": ""
-  }
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
 }
