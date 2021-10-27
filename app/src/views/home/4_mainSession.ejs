@@ -3,25 +3,18 @@
   <head>
     <title>Sketcho Prototype</title>
     <script src="/socket.io/socket.io.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script> -->
     <script type="text/javascript" src="https://p5livemedia.itp.io/simplepeer.min.js"></script>
     <script type="text/javascript" src="https://p5livemedia.itp.io/p5livemedia.js"></script>
     <!-- <script type="text/javascript" src="https://p5livemedia.itp.io/socket.io.js"></script>     -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" ></script>
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script> -->
-		<!-- <script type="text/javascript" src="https://p5live.itp.io/simplepeer.min.js"></script>
-	  <script type="text/javascript" src="https://p5live.itp.io/socket.io/socket.io.js"></script>
-		<script type="text/javascript" src="https://p5live.itp.io/p5live.js"></script>  -->
-
     <link rel="stylesheet" type="text/css" href="/css/home/style.css">
     <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
     <script src="./fontawesome/js/all.js"></script>
     <!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
-    <meta charset="utf-8" />
-    <!-- favicon.ico 404 (Not Found) -->
+    <meta charset="utf-8"/>
     <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
   </head>
   <body>
@@ -29,25 +22,29 @@
     <label for="check">
       <i class="fas fa-th-large" id="btn"></i>
       <i class="fas fa-times" id="cancel"></i>
+      <!-- <i class="" id="btn"></i>
+      <i class="" id="cancel"></i> -->
     </label>
     <div class="sidebar">
       <header>Sketcho</header>
       <ul>
-        <li><a href="1_preparation.html"><i class="fas fa-coffee"></i>Preparation room</a></li>
-        <li><a href="2_outfit.html"><i class="fas fa-theater-masks"></i>Outfit room</a></li>
-        <li><a href="3_play.html"><i class="fas fa-smile"></i>Play room</a></li>
-        <li><a href="4_mainSession.html"><i class="fas fa-border-all"></i>Main Session</a></li>
-        <li><a href="5_breakoutroom1.html"><i class="fas fa-comments"></i>breakout room1</a></li>
-        <li><a href="6_breakoutroom2.html"><i class="fas fa-comments"></i>breakout room2</a></li>
-        <li><a href="7_breakoutroom3.html"><i class="fas fa-comments"></i>breakout room3</a></li>
-        <li><a href="8_party.html"><i class="fas fa-wine-glass"></i>Party time</a></li>
-        <li><a href="9_refreshroom.html"><i class="fas fa-umbrella-beach"></i>Refreshroom : Feedback</a></li>
+        <li><a href="1_preparation.ejs"><i class="fas fa-coffee"></i>Preparation room</a></li>
+        <li><a href="2_outfit.ejs"><i class="fas fa-theater-masks"></i>Outfit room</a></li>
+        <li><a href="3_play.ejs"><i class="fas fa-smile"></i>Play room</a></li>
+        <li><a href="4_mainSession.ejs"><i class="fas fa-border-all"></i>Main Session</a></li>
+        <li><a href="5_breakoutroom1.ejs"><i class="fas fa-comments"></i>breakout room1</a></li>
+        <li><a href="6_breakoutroom2.ejs"><i class="fas fa-comments"></i>breakout room2</a></li>
+        <li><a href="7_breakoutroom3.ejs"><i class="fas fa-comments"></i>breakout room3</a></li>
+        <li><a href="8_party.ejs"><i class="fas fa-wine-glass"></i>Party time</a></li>
+        <li><a href="9_refreshroom.ejs"><i class="fas fa-umbrella-beach"></i>Refreshroom : Feedback</a></li>
       </ul>
     </div>
     <div class="icon-bar">
       <a href="#"><a button id="mute"><i class = "fas fa-microphone"></i></a>
       <a href="#"><a button id="camera"><i class = "fas fa-video"></i></a> 
   </div>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPbQEVoDbtKdOeB_T5nrHuztlSvVeGJQGxz1pyAUTWEumAc87Ctky8HplMrjIE9Kn0XybEiF9_4bJi/embed?start=false&loop=false&delayms=3000" id="myframe" frameborder="0" width="530" height="320" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
   </body>
-  <script src="js/home/1_preparation.js"></script>
+  <script src="js/home/4_mainSession.js"></script>
 </html>

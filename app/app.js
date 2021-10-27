@@ -7,8 +7,15 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5500;
 
+// routing
+const home = require("./src/routes/home");
+
 //app setting
-app.use(express.static(`${__dirname}/public`));
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
+
+app.use(express.static(`${__dirname}/src/public`));
+app.use("/", home);
 
 // Starts the server
 let server = app.listen(PORT, function () {
