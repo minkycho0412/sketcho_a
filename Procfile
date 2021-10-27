@@ -1,2 +1,2 @@
-worker: node app.js
+worker: node app/app.js
 run(host='0.0.0.0', port=os.environ.get('PORT', '5500'))
