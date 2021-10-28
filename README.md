@@ -1,7 +1,7 @@
 ## Sketcho project
 
 Before running the server :
-npm install
+npm install,
 yarn add nodemon
 
 local server running :
