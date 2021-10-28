@@ -1,3 +1,11 @@
 ## Sketcho project
 
-server running command : node ./bin/www.js
+Before running the server :
+npm install
+yarn add nodemon
+
+local server running :
+yarn start
+
+
+
